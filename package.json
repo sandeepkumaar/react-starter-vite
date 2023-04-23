@@ -1,0 +1,34 @@
+{
+  "name": "react-starter-vite",
+  "version": "1.0.0",
+  "description": "react starter with vite + routing + lazy loader + unit tests + functional tests",
+  "main": "main.jsx",
+  "type": "module",
+  "scripts": {
+    "start": "run-s build serve",
+    "start:local": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "starter",
+    "vite",
+    "unit-test",
+    "functional-test",
+    "msw",
+    "lazy-load"
+  ],
+  "author": "sandeepkumaar.c",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "vite": "^4.3.1"
+  }
+}
