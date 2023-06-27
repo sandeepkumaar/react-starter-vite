@@ -1,13 +1,35 @@
-import React from 'react';
+import { 
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route
+} from 'react-router-dom'
 
-let mode = import.meta.env.MODE;
+import App from './app.jsx';
+import ErrorPage from './error-page.jsx';
 
-export default function App() {
-  return (
-  <div>
-    <h4>React Starter: running in "{mode}"</h4>
+// Routes
+import routerFormRoute from './forms/routes.jsx';
 
-  </div>
-  
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route
+      path='/'
+      element={<App/>}
+      errorElement={<ErrorPage/>}
+    >
+      {routerFormRoute}
+      
+    </Route>
+
   )
+)
+
+
+export default function Root() {
+  return (
+    <RouterProvider router={router}/>
+  )
+
 }

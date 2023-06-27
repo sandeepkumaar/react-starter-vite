@@ -1,4 +1,6 @@
-import React from 'react';
+/*msw should be imported before others to take effect before loader calls*/
+import mockService from './mocks';
+
 import { createRoot } from 'react-dom/client';
 import App from './src';
 
