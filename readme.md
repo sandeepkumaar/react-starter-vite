@@ -2,7 +2,7 @@
 React starter template for personal reference. Will keep this template upto date with 
 latest technologies and share the rationale behind choosing each one of them
 
-Includes react-router, Lazy loading, code splitting with
+Includes react-router v6(DataRouter), Lazy loading, code splitting with
 - Typechecking:   tsc`
 - Linting: `eslint` `husky`
 - Unit tests: `tape` `happydom` `react-testing-library`

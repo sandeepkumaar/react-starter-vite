@@ -32,4 +32,5 @@ export default function Root() {
     <RouterProvider router={router}/>
   )
 
-}
+};
+
