@@ -6,7 +6,8 @@ import {
 } from 'react-router-dom'
 
 import './index.css'
-import App, {loader as appLoader} from './app';
+import App, {contactsLoader, createContactAction } from './app';
+import contactRoutes from './contacts/routes';
 import ErrorPage from './error-page.jsx';
 
 // Routes
@@ -15,10 +16,12 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path='/'
-      loader={appLoader}
+      loader={contactsLoader}
+      action={createContactAction}
       element={<App/>}
       errorElement={<ErrorPage/>}
     >
+      {contactRoutes}
       
     </Route>
 

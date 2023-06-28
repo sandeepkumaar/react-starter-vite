@@ -1,14 +1,16 @@
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Form, Outlet, useLoaderData } from 'react-router-dom';
 import { SearchForm } from './search-form';
 import { ContactList } from './contact-list'
 
-import {getContacts} from '../service';
+import {getContacts, createContact} from '../service';
 
-export function loader({request}) {
+export function contactsLoader({request}) {
   return getContacts();
 };
 
-
+export function createContactAction({request}) {
+  return createContact();
+}
 
 export default function App() {
   const contacts = useLoaderData();
@@ -18,15 +20,17 @@ export default function App() {
         <h1>React Router Contacts</h1>
         <div>
           <SearchForm />
-          <form method="post">
+          <Form method="post">
             <button type="submit">New</button>
-          </form>
+          </Form>
         </div>
         <nav>
           <ContactList contacts={contacts}/>
         </nav>
       </div>
-      <div id="detail"></div>
+      <div id="detail">
+        <Outlet />
+      </div>
     </>
   );
 }

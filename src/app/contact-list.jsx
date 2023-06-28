@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export function ContactList({ contacts }) {
+
   if (!contacts.length) {
     return (
       <p>
