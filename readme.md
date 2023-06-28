@@ -14,4 +14,7 @@ Includes react-router v6(DataRouter), Lazy loading, code splitting with
 Rationale behind each tools, libs, configurations are explained in `notes` folder. 
 All the rationale is only based on my assumption and personal preference
 
+TODO: 
+- jsdocs for types
+- lint on commit
 

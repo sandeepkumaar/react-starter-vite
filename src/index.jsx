@@ -5,27 +5,29 @@ import {
   Route
 } from 'react-router-dom'
 
-import App from './app.jsx';
+import './index.css'
+import App, {loader as appLoader} from './app';
 import ErrorPage from './error-page.jsx';
 
 // Routes
-import routerFormRoute from './forms/routes.jsx';
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path='/'
+      loader={appLoader}
       element={<App/>}
       errorElement={<ErrorPage/>}
     >
-      {routerFormRoute}
       
     </Route>
 
   )
 )
 
+
+const mode = import.meta.env.MODE;
+console.log('env mode', mode);
 
 export default function Root() {
   return (

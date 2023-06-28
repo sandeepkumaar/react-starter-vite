@@ -8,7 +8,7 @@ export default function ErrorPage() {
   /** @type {Error|Response}*/
   const error =  useRouteError();
   return (
-    <div className="error-page">
+    <div id="error-page">
       <h2>Oops!</h2>
       <p> <i>{error.statusText}</i></p>
       <p> <i>{error.message}</i></p>
