@@ -10,7 +10,9 @@
     "serve": "vite preview",
     "test": "tape -r ./esbuild-register.js 'src/**/*.test.+(js|jsx)' | tap-nirvana",
     "lint": "echo 'eslint-prettier-tsc'",
-    "functional-test": "echo playwright"
+    "functional-test": "echo playwright",
+    "docker-build": "docker build -t react-starter-vite .",
+    "docker-run": "docker run -d -p 8080:8080 react-starter-vite"
   },
   "keywords": [
     "react",
