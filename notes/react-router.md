@@ -75,6 +75,12 @@ navigation. No history affected.
 ### useNavigation
 All navigation events (from Link, Form) are captured and useNavigation hook provides states during the transition
 
+### useNavigate vs redirect
+Both cause navigation programmatically within code when navigation cannot be done thru Link/Form  
+Case - auth/logout redirection, action redirection
+- use redirect inside loader/actions where a Response is expected. redirect is wrapper around Response
+- use usNavigate for other places.
+
 
 ## why React Data router ? 
 Data router using <Form><Link> with action and loader is providing us a framework to organize the app which in turn
