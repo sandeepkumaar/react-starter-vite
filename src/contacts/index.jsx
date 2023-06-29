@@ -1,16 +1,18 @@
 import { Form, useLoaderData } from "react-router-dom";
-import {getContact} from '../service';
 import DeleteContact, { deleteContactAction } from './delete-contact.jsx';
 
+/*
+ * For code splitting, we need to have them in separate file.
+ * otherwise this loader is also added along with lazy loaded contact, action
+ */
+//import {getContact} from '../service';
+//export async function contactLoader({request, params}) {
+//  let contact = await getContact(params.contactId);
+//  return contact;
+//};
 
 export { deleteContactAction }
-
-export async function contactLoader({request, params}) {
-  let contact = await getContact(params.contactId);
-  return contact;
-};
-
-export default function Contact() {
+export function Contact() {
   const contact = useLoaderData();
 
   return (

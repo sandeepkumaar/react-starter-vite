@@ -8,7 +8,9 @@
     "start:local": "vite --debug --force",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "tape -r ./esbuild-register.js 'src/**/*.test.+(js|jsx)' | tap-nirvana"
+    "test": "tape -r ./esbuild-register.js 'src/**/*.test.+(js|jsx)' | tap-nirvana",
+    "lint": "echo 'eslint-prettier-tsc'",
+    "functional-test": "echo playwright"
   },
   "keywords": [
     "react",
@@ -43,6 +45,6 @@
     "vite": "^4.3.1"
   },
   "msw": {
-    "workerDirectory": ""
+    "workerDirectory": "public"
   }
 }
