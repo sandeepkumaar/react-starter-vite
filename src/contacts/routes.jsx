@@ -1,4 +1,4 @@
-import Contact, {contactLoader} from './index.jsx';
+import Contact, {contactLoader, deleteContactAction } from './index.jsx';
 import ContactForm, {updateContactAction} from './contact-form.jsx';
 import {
   Route
@@ -9,6 +9,7 @@ const routes = (
     <Route
       path='contacts/:contactId'
       loader={contactLoader}
+      action={deleteContactAction}
       element={<Contact/>}
     >
     </Route>

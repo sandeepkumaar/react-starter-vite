@@ -1,11 +1,14 @@
 import { Form, useLoaderData } from "react-router-dom";
 import {getContact} from '../service';
+import DeleteContact, { deleteContactAction } from './delete-contact.jsx';
 
+
+export { deleteContactAction }
 
 export async function contactLoader({request, params}) {
   let contact = await getContact(params.contactId);
   return contact;
-}
+};
 
 export default function Contact() {
   const contact = useLoaderData();
@@ -48,21 +51,7 @@ export default function Contact() {
           <Form action="edit">
             <button type="submit">Edit</button>
           </Form>
-          <Form
-            method="post"
-            action="destroy"
-            onSubmit={(event) => {
-              if (
-                !confirm(
-                  "Please confirm you want to delete this record."
-                )
-              ) {
-                event.preventDefault();
-              }
-            }}
-          >
-            <button type="submit">Delete</button>
-          </Form>
+          <DeleteContact contactId={contact.id}/>
         </div>
       </div>
     </div>

@@ -154,3 +154,41 @@ To combat this, we can use caching layers so we can have instant back button - o
 (more on this later)
 
 
+## Note on action, useActionData
+Action can be submitted to the same route <Form method=''/> or to a different route <Form action='xyz'/>
+
+Usually action are submitted to the same route, and the components gets the data thru `useActionData` hook.
+
+Eg: 
+```
+function action({request}) {
+  let query = request.formData();
+  let results = await getDbResults(query);
+  return results;
+
+}
+
+function Component()  {
+  let data = useActionData();
+  <Form method='post'>
+   {...complex search query input }
+  <Form/>
+  <Table data={data} />
+
+}
+```
+loader/useLoader can be used to fetch a default query. 
+action/useActionData is used for user specific query.
+
+Q: when action is called, does current route loader is also called? 
+
+Q: When do we call action on some other route? 
+<Form action='show-list'>
+show-list route might display some list based on default query. but if we are in some page when we submit page with 
+some specific query requirements, we can call the `show-list` action with our formData, which will get rendered based on 
+the action call.
+
+
+
+
+
