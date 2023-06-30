@@ -5,6 +5,7 @@ on:
     paths:
       - src/**
       - test/**
+      - .github/workflows/run-tests.yml
 
 jobs:
   run-test-cases:
