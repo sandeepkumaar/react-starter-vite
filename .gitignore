@@ -2,7 +2,9 @@
 node_modules
 
 # production
-public
+public/*
+# This is only for testing in prod. actual prod shouldn't have this
+!public/mockServiceWorker.js 
 
 # testing
 

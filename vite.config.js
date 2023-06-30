@@ -6,7 +6,8 @@ export default defineConfig({
     splitVendorChunkPlugin(),
   ],
   build: {
-    outDir: 'public'
+    outDir: 'public',
+    emptyOutDir: false
   }
 })
 
