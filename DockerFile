@@ -5,7 +5,7 @@ USER root
 WORKDIR /app
 
 # install package.json first so it get cached
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install 
 
