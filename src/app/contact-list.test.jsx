@@ -10,7 +10,7 @@ test("<ContactList contacts={[]}/>", async (assert) => {
     assert.teardown
   );
   let node = await screen.getByText(/No Contacts/i);
-  assert.same(node.innerText.trim(), "Nocontacts", desc);
+  assert.same(node.innerText.trim(), "No contacts", desc);
 });
 
 
