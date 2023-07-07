@@ -9,5 +9,6 @@ jobs:
     uses: ./.github/workflows/use-code-check.yml
 
   build: 
-    uses: ./.github/workflow/use-docker-build-push.yml
+    needs: code-check
+    uses: ./.github/workflows/use-docker-build-push.yml
 
