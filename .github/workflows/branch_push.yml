@@ -1,0 +1,9 @@
+name: branch_push
+on:
+  push: 
+    paths-ignore: "**/.md"
+
+jobs: 
+  code-check: 
+    uses: ./.github/workflows/use-code-check.yml
+

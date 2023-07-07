@@ -1,0 +1,13 @@
+name: branch_push
+on:
+  pull_request: 
+    branch: [ master ]
+    paths-ignore: "**/.md"
+
+jobs: 
+  code-check: 
+    uses: ./.github/workflows/use-code-check.yml
+
+  build: 
+    uses: ./.github/workflow/use-docker-build-push.yml
+
