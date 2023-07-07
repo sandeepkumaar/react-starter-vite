@@ -4,6 +4,6 @@ on:
     paths-ignore: "**/.md"
 
 jobs: 
-  test: 
-    uses: ./.github/workflow/code-check.yml
+  code-check: 
+    uses: ./.github/workflow/use-code-check.yml
 
