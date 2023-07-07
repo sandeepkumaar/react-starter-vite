@@ -1,9 +1,11 @@
 name: code-check lint, unit test
+
 on: workflow_call
 
 jobs: 
   test: 
     runs-on: ubuntu-latest
+    environment: test
     steps: 
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
