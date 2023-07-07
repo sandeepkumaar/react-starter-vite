@@ -1,7 +1,7 @@
 name: branch_push
 on:
   pull_request: 
-    branch: [ master ]
+    branches: [ master ]
     paths-ignore: "**/.md"
 
 jobs: 
