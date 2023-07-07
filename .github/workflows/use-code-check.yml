@@ -1,10 +1,5 @@
-name: unit-tests
-on:
-  push: 
-    paths-ignore: "**/.md"
-  pull_request: 
-    branch: [ master ]
-    paths-ignore: "**/.md"
+name: code-check lint, unit test
+on: workflow_dispatch
 
 jobs: 
   test: 
