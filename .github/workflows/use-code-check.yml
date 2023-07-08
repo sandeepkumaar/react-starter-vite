@@ -3,9 +3,18 @@ name: code-check lint, unit test
 on: workflow_call
 
 concurrency: 
-  group: code-check-${{ github.head.ref }}
+  group: code-check-${{ github.ref_name }}
 
 jobs: 
+  print-vars: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Print variables
+        run: |
+          echo ${{ github.head.ref }}
+          echo ${{ github.base.ref }}
+          echo ${{ github.ref_name }}
+
   test: 
     runs-on: ubuntu-latest
     environment: test

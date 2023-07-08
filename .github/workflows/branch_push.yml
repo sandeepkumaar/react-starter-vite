@@ -1,4 +1,4 @@
-name: branch_push
+name: merge_ready
 on:
   # trigger for all push to feature branches
   push: 
@@ -6,19 +6,6 @@ on:
     paths-ignore: "**/.md"
 
 jobs: 
-  print-vars: 
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Print variables
-        run: |
-          echo ${{ github.head.ref }}
-          echo ${{ github.base.ref }}
-          echo ${{ github.ref_name }}
-          echo "$GITHUB_REF"
-      - name: xyz
-        run: echo "$GITHUB_REF"
- 
-
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
 

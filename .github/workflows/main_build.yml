@@ -1,4 +1,4 @@
-name: main_build
+name: build_master
 on:
   # trigger on merge to master and direct push to master
   push: 
@@ -6,14 +6,6 @@ on:
     paths-ignore: "**/.md"
 
 jobs: 
-  print-vars: 
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Print variables
-        run: |
-          echo ${{ github.head.ref }}
-          echo ${{ github.base.ref }}
-
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
 
