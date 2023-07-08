@@ -11,8 +11,8 @@ jobs:
     steps: 
       - name: Print variables
         run: |
-          echo ${{ GITHUB_HEAD_REF }}
-          echo ${{ GITHUB_BASE_REF }}
+          echo ${{ github.head.ref }}
+          echo ${{ github.base.ref }}
 
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
