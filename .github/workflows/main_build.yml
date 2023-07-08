@@ -7,10 +7,12 @@ on:
 
 jobs: 
   print-vars: 
-    name: Print variables
-    run: |
-      echo ${{ GITHUB_HEAD_REF }}
-      echo ${{ GITHUB_BASE_REF }}
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Print variables
+        run: |
+          echo ${{ GITHUB_HEAD_REF }}
+          echo ${{ GITHUB_BASE_REF }}
 
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
