@@ -11,4 +11,5 @@ jobs:
   build: 
     needs: code-check
     uses: ./.github/workflows/use-docker-build-push.yml
+    secrets: inherit
 
