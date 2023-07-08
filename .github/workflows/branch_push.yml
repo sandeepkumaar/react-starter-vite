@@ -1,9 +1,17 @@
 name: branch_push
 on:
+  # trigger for all push to feature branches
   push: 
+    branches-ignore: [ master ]
     paths-ignore: "**/.md"
 
 jobs: 
+  print-vars: 
+    name: Print variables
+    run: |
+      echo ${{ GITHUB_HEAD_REF }}
+      echo ${{ GITHUB_BASE_REF }}
+
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
 

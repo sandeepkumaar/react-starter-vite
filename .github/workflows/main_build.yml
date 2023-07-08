@@ -1,10 +1,17 @@
 name: branch_push
 on:
-  pull_request: 
+  # trigger on merge to master and direct push to master
+  push: 
     branches: [ master ]
     paths-ignore: "**/.md"
 
 jobs: 
+  print-vars: 
+    name: Print variables
+    run: |
+      echo ${{ GITHUB_HEAD_REF }}
+      echo ${{ GITHUB_BASE_REF }}
+
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
 
