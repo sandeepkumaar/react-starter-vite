@@ -1,4 +1,4 @@
-name: branch_push
+name: main_build
 on:
   # trigger on merge to master and direct push to master
   push: 
