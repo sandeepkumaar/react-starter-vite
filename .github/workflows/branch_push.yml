@@ -13,6 +13,8 @@ jobs:
         run: |
           echo ${{ github.head.ref }}
           echo ${{ github.base.ref }}
+          echo ${{ github.ref }}
+          echo "$GITHUB_REF"
 
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
