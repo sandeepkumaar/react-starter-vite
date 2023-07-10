@@ -6,6 +6,7 @@ on:
 
 concurrency: 
   group: merge-ready--${{ inputs.head_ref }}
+  cancel-in-progress: true
 
 jobs: 
 
