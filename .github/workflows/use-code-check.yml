@@ -11,8 +11,8 @@ jobs:
     steps: 
       - name: Print variables
         run: |
-          echo ${{ github.head.ref }}
-          echo ${{ github.base.ref }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.base_ref }}
           echo ${{ github.ref_name }}
 
   test: 
