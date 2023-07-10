@@ -25,7 +25,7 @@ test('<SearchForm/> submit', async assert => {
 
     let desc = 'Given user input; should display in search input';
     let expected = 'xyz';
-    await user.type(searchInput, 'xz');
+    await user.type(searchInput, 'xyz');
     assert.same(searchInput.value, expected, desc);
   }
 })
