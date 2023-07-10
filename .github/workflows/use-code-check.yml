@@ -14,6 +14,7 @@ jobs:
           echo ${{ github.head_ref }}
           echo ${{ github.base_ref }}
           echo ${{ github.ref_name }}
+          echo ${{ github.sha }}
 
   test: 
     runs-on: ubuntu-latest
