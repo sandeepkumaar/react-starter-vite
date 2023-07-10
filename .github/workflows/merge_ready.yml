@@ -1,14 +1,12 @@
 name: merge_ready
 on:
-  #pull_request: 
-  #  branches: [ master ]
-  #  paths-ignore: "**/.md"
-  # trigger for all feature branch push
-  push: 
-    branches-ignore: [ master ]
+  pull_request: 
+    branches: [ master ]
     paths-ignore: "**/.md"
 
 jobs: 
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
+    with: 
+      group_name: ${{ github.head_ref}}
 

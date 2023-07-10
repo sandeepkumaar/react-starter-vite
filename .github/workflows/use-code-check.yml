@@ -3,7 +3,7 @@ name: code-check lint, unit test
 on: workflow_call
 
 concurrency: 
-  group: code-check-${{ github.ref_name }}
+  group: code-check-${{ inputs.group_name }}
 
 jobs: 
   print-vars: 
