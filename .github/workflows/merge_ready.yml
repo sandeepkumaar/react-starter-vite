@@ -1,6 +1,9 @@
 name: merge_ready
 on:
-  # trigger for all push to feature branches
+  pull_request: 
+    branches: [ master ]
+    paths-ignore: "**/.md"
+  # trigger for all feature branch push
   push: 
     branches-ignore: [ master ]
     paths-ignore: "**/.md"
