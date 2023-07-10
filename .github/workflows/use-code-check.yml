@@ -15,6 +15,8 @@ jobs:
           echo ${{ github.base_ref }}
           echo ${{ github.ref_name }}
           echo ${{ github.ref_name }}
+          echo ${{ inputs.group_name }}
+
   test: 
     runs-on: ubuntu-latest
     environment: test

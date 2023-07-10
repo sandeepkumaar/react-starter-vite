@@ -8,5 +8,5 @@ jobs:
   code-check: 
     uses: ./.github/workflows/use-code-check.yml
     with: 
-      group_name: ${{ github.head_ref}}
+      group_name: Hi
 
