@@ -2,20 +2,7 @@ name: code-check lint, unit test
 
 on: workflow_call
 
-concurrency: 
-  group: code-check-${{ inputs.group_name }}
-
 jobs: 
-  print-vars: 
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Print variables
-        run: |
-          echo ${{ github.head_ref }}
-          echo ${{ github.base_ref }}
-          echo ${{ github.ref_name }}
-          echo ${{ github.ref_name }}
-          echo ${{ inputs.group_name }}
 
   test: 
     runs-on: ubuntu-latest
