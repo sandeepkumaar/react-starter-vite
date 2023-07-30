@@ -2,10 +2,10 @@ name: Docker build and publish
 
 on: workflow_dispatch
 
-jobs: 
-  docker_build: 
+jobs:
+  docker_build:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -20,5 +20,11 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
-    
-
+  run-kube:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: get pods
