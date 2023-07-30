@@ -41,8 +41,9 @@ jobs:
       - id: update-image
         uses: Charlyzzz/update-k8s-image
         with:
-          manifest-path: manifest/deployment.yaml
+          manifest-path: manifests/deployment.yaml
           new-image-tag: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
           container-name: react-starter-vite
 
-      - run: cat manifest/deployment.yaml
+      - name: Print
+        run: cat manifest/deployment.yaml
