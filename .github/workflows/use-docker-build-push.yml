@@ -27,6 +27,4 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: |
-            apply -f https://k8s.io/examples/application/deployment.yaml
-            describe deployment nginx-deployment
+          args: apply -f https://k8s.io/examples/application/deployment.yaml
