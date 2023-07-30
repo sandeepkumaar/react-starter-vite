@@ -45,6 +45,7 @@ jobs:
           propertyPath: 'spec.template.spec.containers.image'
           value: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
           commitChange: false
+          updateFile: true
 
       - name: Print
         run: cat manifests/deployment.yaml
