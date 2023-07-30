@@ -1,6 +1,6 @@
 name: Docker build and publish
 
-on: workflow_call
+on: workflow_dispatch
 
 jobs: 
   docker_build: 
@@ -19,6 +19,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME}}/react-starter:${{ github.sha }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
     
 
