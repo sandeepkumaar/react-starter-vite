@@ -38,12 +38,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - id: update-image
-        uses: Charlyzzz/update-k8s-image
-        with:
-          manifest-path: manifests/deployment.yaml
-          new-image-tag: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
-          container-name: react-starter-vite
+      # - id: update-image
+      #   uses: Charlyzzz/update-k8s-image
+      #   with:
+      #     manifest-path: manifests/deployment.yaml
+      #     new-image-tag: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
+      #     container-name: react-starter-vite
 
       - name: Print
         run: cat manifest/deployment.yaml
