@@ -42,7 +42,7 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: manifests/deployment.yaml
-          propertyPath: 'spec.template.spec.containers.image'
+          propertyPath: 'spec.template.spec.containers.[0].image'
           value: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
           commitChange: false
           updateFile: true
