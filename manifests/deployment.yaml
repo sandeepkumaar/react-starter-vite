@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: react-starter-vite
-          image: 1995navinkumar/learn:2a2ab98e677ca2d8ebaf6d620d486b9581903f67
+          image: 1995navinkumar/learn:adf62d95e9a46b68c0b526a009b2f59f69766817
           ports:
             - containerPort: 8080

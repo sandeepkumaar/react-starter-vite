@@ -5,6 +5,7 @@ node_modules
 public/*
 # This is only for testing in prod. actual prod shouldn't have this
 !public/mockServiceWorker.js 
+!public/serve.json 
 
 # testing
 
