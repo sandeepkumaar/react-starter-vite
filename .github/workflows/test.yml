@@ -3,6 +3,7 @@ run-name: ${{ github.event_name == 'workflow_dispatch' && format('Manual Deploym
 
 on:
   workflow_dispatch:
+  push:
     
 jobs:
   print:
