@@ -1,5 +1,5 @@
 name: Test Workflow
-run-name: ${{ github.event_name == 'workflow_dispatch' && 'Manual Deployment by @${{ github.actor }}'  || 'Scheduled Deployment' }}
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('Manual Deployment by @{0}', github.actor)  || 'Scheduled Deployment' }}
 
 on:
   workflow_dispatch:
