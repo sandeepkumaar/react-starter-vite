@@ -1,0 +1,23 @@
+name: code-check lint, unit test
+
+on: workflow_call
+
+jobs: 
+
+  test: 
+    runs-on: ubuntu-latest
+    environment: test
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+
+        # Install only from package.lock.json
+      - name: Install Dependencies 
+        run: npm ci
+
+      - name: Run Unit tests
+        run:  npm run test
+
+      - name: Build App
+        run:  npm run build
+
