@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react';
 
 
 export default defineConfig(({ mode }) => {
-  process.env = { ...process.env, ...loadEnv(mode, "env") };
+  const viteEnv = loadEnv(mode, "env");
+  console.log(viteEnv);
   return {
-    base: process.env.VITE_BASE_URL || '/',
+    base: viteEnv.VITE_BASE_URL || '/',
     plugins: [
       react(),
       splitVendorChunkPlugin(),
