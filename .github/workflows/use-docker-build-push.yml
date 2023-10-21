@@ -1,11 +1,22 @@
 name: Docker build and publish
 
-on: workflow_call
+on:
+  workflow_dispatch:
+    inputs:
+      build:
+        description: Run build?
+        type: boolean
+        required: true
+      deploy:
+        description: Deploy?
+        type: boolean
+        required: true
 
-jobs: 
-  docker_build: 
+jobs:
+  docker_build:
     runs-on: ubuntu-latest
-    steps: 
+    if: inputs.build
+    steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -19,6 +30,24 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME}}/react-starter:${{ github.sha }}
-    
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
 
+  deploy:
+    runs-on: ubuntu-latest
+    if: inputs.deploy
+    needs: docker_build
+    steps:
+      - uses: actions/checkout@v3
+      - name: update-image
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: manifests/deployment.yaml
+          propertyPath: "spec.template.spec.containers.0.image"
+          value: ${{ secrets.DOCKERHUB_USERNAME}}/learn:${{ github.sha }}
+          commitChange: false
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: apply -f manifests

@@ -1,0 +1,12 @@
+name: Test Workflow
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('Manual Deployment by @{0}', github.actor)  || 'Scheduled Deployment' }}
+
+on:
+  workflow_dispatch:
+  push:
+    
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Hi'

@@ -16,10 +16,10 @@ RUN npm run build
 From node:18-alpine as server
 USER root
 WORKDIR /app
-RUN npm install -g http-server
+RUN npm install -g serve
 
 COPY --from=build /app/public /app
 
 EXPOSE 8080
 
-CMD ["http-server"]
+CMD ["serve","-p","8080"]

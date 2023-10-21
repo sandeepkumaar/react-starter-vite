@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-starter-vite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-starter-vite
+  template:
+    metadata:
+      labels:
+        app: react-starter-vite
+    spec:
+      containers:
+        - name: react-starter-vite
+          image: 1995navinkumar/learn:adf62d95e9a46b68c0b526a009b2f59f69766817
+          ports:
+            - containerPort: 8080
