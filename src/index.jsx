@@ -31,6 +31,7 @@ const router = createBrowserRouter(
 
 const mode = import.meta.env.MODE;
 console.log('env mode', mode);
+console.log(import.meta.env.BASE_URL);
 
 export default function Root() {
   return (
