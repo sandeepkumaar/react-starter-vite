@@ -1,19 +1,13 @@
 name: merge_ready
 on:
-  pull_request: 
-    branches: [ master ]
-    paths-ignore: "**/.md"
+  pull_request:
+    branches: [master]
+    paths-ignore: ["**/.md"]
 
-concurrency: 
+concurrency:
   group: merge-ready--${{ inputs.head_ref }}
   cancel-in-progress: true
 
-jobs: 
-
-  code-check: 
+jobs:
+  code-check:
     uses: ./.github/workflows/use-code-check.yml
-
-
-
-
-
