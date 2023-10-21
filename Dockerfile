@@ -7,8 +7,6 @@ WORKDIR /app
 # install package.json first so it get cached
 COPY package*.json ./
 
-RUN npm install -g serve
-
 # copy from repo to container
 COPY . .
 RUN npm run build
@@ -16,7 +14,7 @@ RUN npm run build
 From node:18-alpine as server
 USER root
 WORKDIR /app
-RUN npm install -g http-server
+RUN npm install -g serve
 
 COPY --from=build /app/public /app
 
