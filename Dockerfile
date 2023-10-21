@@ -7,6 +7,7 @@ WORKDIR /app
 # install package.json first so it get cached
 COPY package*.json ./
 
+RUN npm install
 # copy from repo to container
 COPY . .
 RUN npm run build
