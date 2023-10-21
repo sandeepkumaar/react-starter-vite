@@ -5,7 +5,9 @@ import { ContactList } from './contact-list'
 import {getContacts, createContact} from '../service';
 
 export function contactsLoader({request}) {
-  return getContacts();
+  const url = new URL(request.url);
+  const q = url.searchParams.get("q");
+  return getContacts(q);
 };
 
 export function createContactAction({request}) {

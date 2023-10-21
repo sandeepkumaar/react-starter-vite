@@ -7,7 +7,7 @@ WORKDIR /app
 # install package.json first so it get cached
 COPY package*.json ./
 
-RUN npm install 
+RUN npm install -g serve
 
 # copy from repo to container
 COPY . .
@@ -22,4 +22,4 @@ COPY --from=build /app/public /app
 
 EXPOSE 8080
 
-CMD ["http-server"]
+CMD ["serve","-p","8080"]
