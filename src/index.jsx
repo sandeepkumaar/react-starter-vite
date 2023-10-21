@@ -1,4 +1,4 @@
-import { 
+import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
@@ -6,11 +6,13 @@ import {
 } from 'react-router-dom'
 
 import './index.css'
-import App, {contactsLoader, createContactAction } from './app';
+import App, { contactsLoader, createContactAction } from './app';
 import contactRoutes from './contacts/routes';
 import ErrorPage from './error-page.jsx';
 
 // Routes
+
+const baseURL = import.meta.env.VITE_BASE_URL;
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,14 +20,17 @@ const router = createBrowserRouter(
       path='/'
       loader={contactsLoader}
       action={createContactAction}
-      element={<App/>}
-      errorElement={<ErrorPage/>}
+      element={<App />}
+      errorElement={<ErrorPage />}
     >
       {contactRoutes}
-      
+
     </Route>
 
-  )
+  ),
+  {
+    basename: baseURL
+  }
 )
 
 
@@ -35,7 +40,7 @@ console.log(import.meta.env.VITE_MSW_URL);
 
 export default function Root() {
   return (
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   )
 
 };
