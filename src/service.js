@@ -1,6 +1,6 @@
 import createFetchJson from './fetch';
 
-const fetchJson = createFetchJson('http://localhost:4000');
+const fetchJson = createFetchJson(import.meta.env.VITE_MSW_URL);
 
 export async function getContacts(query) {
   if (query) {

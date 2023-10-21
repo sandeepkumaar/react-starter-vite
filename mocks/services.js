@@ -5,7 +5,7 @@ import localforage from "localforage";
 import { matchSorter } from "match-sorter";
 import sortBy from "sort-by";
 
-const host = 'http://localhost:4000'
+const host = import.meta.env.VITE_MSW_URL
 
 function set(contacts) {
   return localforage.setItem("contacts", contacts);
