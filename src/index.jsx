@@ -21,6 +21,8 @@ initializeFaro({
 
 // Routes
 
+const baseURL = import.meta.env.VITE_BASE_URL;
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
@@ -34,7 +36,10 @@ const router = createBrowserRouter(
 
     </Route>
 
-  )
+  ),
+  {
+    basename: baseURL
+  }
 )
 
 
